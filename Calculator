@@ -1,0 +1,33 @@
+<script>
+class Calculator {
+  add(x, y) {
+    return x + y;
+  }
+
+  subtract(x, y) {
+    return x - y;
+  }
+
+  multiply(x, y) {
+    return x * y;
+  }
+
+  divide(x, y) {
+    try {
+      if (y === 0) {
+        throw new Error("Cannot divide by zero.");
+      }
+      const result = x / y;
+      return result;
+    } catch (error) {
+      console.error(error.message);
+    }
+  }
+}
+
+const calculator = new Calculator();
+console.log("Addition:", calculator.add(6, 6));         // Result: 12
+console.log("Subtraction:", calculator.subtract(24, 12)); // Result: 12
+console.log("Multiplication:", calculator.multiply(2, 6)); // Result: 12
+console.log("Division:", calculator.divide(24, 0));      // Error message for division by zero
+</script>
